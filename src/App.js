@@ -5,7 +5,6 @@ import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
 import './App.css';
 import { Bar } from 'react-chartjs-2';
-//import faker from 'faker';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,48 +16,9 @@ import {
 } from 'chart.js';
 
 
-
-
-
-// const application_id = 'LN_ui83Lg_cDnG-CkICWeQ'
-// const secret = 'RoAbgrrW4mmvRZLWe-JEF4GRG_B_PA'
-//const data = { username: 'LN_ui83Lg_cDnG-CkICWeQ',password:'RoAbgrrW4mmvRZLWe-JEF4GRG_B_PA'};
-
-
-
 class App extends Component {
   constructor(props) {
     super();
-
-    //  const options = {
-    //   responsive: true,
-    //   plugins: {
-    //     legend: {
-    //       position: 'top',
-    //     },
-    //     title: {
-    //       display: true,
-    //       text: 'Chart.js Bar Chart',
-    //     },
-    //   },
-    // };
-
-    // const labels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-    // const data2 = {
-    //   labels,
-    //   datasets: [
-    //     {
-    //       label: 'Dataset 1',
-    //       data: [this.state.Sunday_count,this.state.Monday_count,this.state.Tuesday_count,this.state.Wednesday_count,this.state.Thursday_count,this.state.Friday_count,this.Saturday_count],
-    //       backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    
-    //     },
-        
-    //   ],
-      
-    // };
-
     this.state = {
       //input: '',
       Subreddit: '',
@@ -79,7 +39,7 @@ class App extends Component {
           },
           title: {
             display: true,
-            text: 'Chart.js Bar Chart',
+            text: '# of upvotes per day',
           },
         },
       }, 
@@ -122,9 +82,9 @@ onButtonSubmit = () =>{
   headers:{
     'User-Agent':'myscript',
     'Content-Type':'application/x-www-form-urlencoded',
-    'Authorization': 'Basic TE5fdWk4M0xnX2NEbkctQ2tJQ1dlUTpSb0FiZ3JyVzRtbXZSWkxXZS1KRUY0R1JHX0JfUEE='
+    'Authorization': 'Basic {insert your encoded app id and secret here}'
     },
-  body: "grant_type=password&username=iqs8&password=TitanFries15"
+  body: "grant_type=password&username={insert your reddit username}&password={insert your reddit password}"
   })
   .then(response => response.json()).then(data=> {
     
@@ -153,8 +113,6 @@ async get_data() {
           'User-Agent':'myscript',
           'Content-Type':'application/x-www-form-urlencoded',
           'Authorization': 'Bearer '+ this.state.access_token,
-          //'Host': '<calculated when request is sent>',
-            //'User-Agent': 'PostmanRuntime/7.29.2'
         },
           })
         .then((response)=> response.json());
@@ -232,7 +190,7 @@ async get_data() {
         labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [
           {
-            label: 'Dataset 1',
+            label: '# of posts',
             data: [this.state.Sunday_count,this.state.Monday_count,this.state.Tuesday_count,this.state.Wednesday_count,this.state.Thursday_count,this.state.Friday_count,this.state.Saturday_count],
             backgroundColor: 'rgba(3, 138, 255,1)',
       
