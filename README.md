@@ -16,3 +16,6 @@ in app.js insert your encoded app id and secret on line 85 and reddit username a
 
 3: input subreddit and wait for data to be displayed (might have to wait a few seconds to get data
 
+![image](https://user-images.githubusercontent.com/110414509/186994553-b31687a5-f8ff-4925-bb79-87566a060c21.png)
+
+![image](https://user-images.githubusercontent.com/110414509/186994646-e3dce2cf-e1bf-4f5b-96ff-63b35a3fce2c.png)
