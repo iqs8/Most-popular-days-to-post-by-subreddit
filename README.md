@@ -1,8 +1,8 @@
 Installation
 
-1: 'git clone https://github.com/iqs8/Most-popular-days-to-post-by-subreddit.git'
+1: `git clone https://github.com/iqs8/Most-popular-days-to-post-by-subreddit.git`
 2: install node js: https://nodejs.org/en/download/
-3: install react charts 2: npm i react-chartjs-2 chart.js
+3: install react charts 2: `npm i react-chartjs-2 chart.js`
 
 
 Usage 
